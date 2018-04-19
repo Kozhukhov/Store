@@ -57,6 +57,29 @@
         </nav>
 
         <main role="main" id="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit category</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <input type="text" class="form-control" id="exampleInputText" placeholder="New category">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary save">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+
           <form>
             <div class="form-group">
               <label for="exampleInputPassword1">Add category</label>
@@ -71,6 +94,7 @@
                   <th>#</th>
                   <th>name</th>
                   <th>delete</th>
+                  <th>edit</th>
                 </tr>
               </thead>
               <tbody>

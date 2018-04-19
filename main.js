@@ -6,7 +6,7 @@ function loadCategories() {
       $("table tbody").html("");
       for (var i = 0; i < data.length; i++) {
         $("table tbody").append(
-          "<tr data-id="+data[i].id +"><td>" + (i + 1) + "</td><td>" + data[i].name + '</td><td><button type="button" class="btn btn-danger">delete</button></td></tr>'
+          "<tr data-id="+data[i].id +"><td>" + (i + 1) + "</td><td>" + data[i].name + '</td><td><button type="button" class="btn btn-danger">delete</button></td><td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">edit</button></td></tr>'
         );
       }
     }
@@ -43,8 +43,11 @@ function init() {
 }
 $(document).ready(function() {
   init();
-  $("table").on("click","button", function(e){
+  $("table").on("click",".btn-danger", function(e){
     var c = $(e.target).parents('tr');
     deleteCategory(c.data('id'));
+});
+$("main").on("click",".save", function(e){
+console.log($(".modal-body input").val());
 });
 });
