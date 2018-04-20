@@ -1,3 +1,4 @@
+var newText;
 function loadCategories() {
   $.ajax({
     url: "http://localhost:2403/categories",
@@ -15,8 +16,8 @@ function loadCategories() {
 
 function setupCategoriesPage() {
   $("form").submit(function(e) {
+    var text = $(".form-group input").val();
     e.preventDefault();
-    var text = $("#exampleInputText").val();
     e.target.children[0].children[1].value = " ";
     $.ajax({
       url: "http://localhost:2403/categories",
@@ -37,17 +38,38 @@ function deleteCategory(a) {
         }
       });
 };
+
+function changeCategory(a, text) {
+  $.ajax({
+    url: "http://localhost:2403/categories/"+a,
+    data: { name: text },
+    type: "PUT",
+    success: function() {
+      loadCategories();
+    }
+  });
+};
+
 function init() {
   setupCategoriesPage();
   loadCategories();
 }
 $(document).ready(function() {
   init();
+
+
+
   $("table").on("click",".btn-danger", function(e){
     var c = $(e.target).parents('tr');
     deleteCategory(c.data('id'));
 });
-$("main").on("click",".save", function(e){
-console.log($(".modal-body input").val());
+var c;
+$("table").on("click",".btn-primary", function(event){
+c = $(event.target).parents('tr');
+console.log("blaaaaaa");
+  $("main").one("click",".save", function(){
+    newText = $(".modal-body input").val();
+    changeCategory(c.data('id'),newText);
+    });
 });
 });
