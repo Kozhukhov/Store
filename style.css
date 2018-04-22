@@ -1,10 +1,60 @@
 .Main{
-    padding-top:40px;
+    padding-top:60px;
+}
+body{
+    background-color:rgb(236,239,244)!important;
 }
 .menu{
 font-size:15px!important;
 color:black!important;
 }
 #main table{
-    margin-top:20px;
+    margin-top:0px;
+}
+.form-group input{
+    width:200px;
+}
+.form-group{
+    width:200px;
+    float:left;
+}
+#add{
+   float:left;
+   margin-left:20px;
+   margin-top:49px;
+}
+#all{
+    width:300px;
+}
+#all .btn-danger{
+    margin-right:20px;
+    margin-left:10px;
+}
+#all-main{
+width:500px;
+margin-left:50px;
+display:none;
+}
+.sidebar{
+    margin-top:-12px;
+    background-color:rgb(55,65,69)!important;
+    height:700px;
+    position: fixed!important;
+}
+.left-menu li a{
+    color:white!important;
+    font-size:15px;
+}
+.left-menu li {
+    margin-left:-15px;
+    padding-right:162px;
+}
+.left-menu li:hover{
+    background-color:rgb(31,40,45)!important;
+}
+#startLabel{
+    margin-left:200px;
+}
+#all-main{
+    display:none;
 }

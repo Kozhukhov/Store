@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow header">
+  <nav class="navbar navbar-dark fixed-top bg-info flex-md-nowrap p-1 shadow header">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <ul class="navbar-nav px-3">
@@ -22,9 +22,9 @@
   <div class="Main">
     <div class="container-fluid">
       <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <nav class="col-md-2 d-none d-md-block sidebar">
           <div class="sidebar-sticky">
-            <ul class="nav flex-column">
+            <ul class="nav flex-column left-menu">
               <li class="nav-item menu">
                 <a class="nav-link" href="#">
                   <span data-feather="file"></span>
@@ -38,7 +38,7 @@
                 </a>
               </li>
               <li class="nav-item menu">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" id="products">
                   <span data-feather="shopping-cart"></span>
                   Products
                 </a>
@@ -49,69 +49,129 @@
                   Customers
                 </a>
               </li>
-
             </ul>
-
-
           </div>
         </nav>
 
-        <main role="main" id="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Edit category</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <input type="text" class="form-control" id="exampleInputText" placeholder="New category">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary save" data-dismiss="modal">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
- 
-
-
-          <form>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Add category</label>
-              <input type="text" class="form-control" id="exampleInputText" placeholder="Category">
+        <h1 id="startLabel" class="all-main">Welcome back!</h1>
+        <div id="all-main" class="all-main">
+          <main role="main" id="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit category</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <input type="text" class="form-control" id="exampleInputText" placeholder="New category">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary save" data-dismiss="modal">Save changes</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <button type="submit" class="btn btn-primary" id="add">Submit</button>
-          </form>
-          <div id="all" class="all">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>name</th>
-                  <th>delete</th>
-                  <th>edit</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </div>
-        </main>
+
+            <form id="formCategory">
+              <div class="form-group">
+                <label>
+                  <h3>Add category</h3>
+                </label>
+                <input type="text" class="form-control" id="exampleInputText" placeholder="Category name">
+              </div>
+              <button type="submit" class="btn btn-primary" id="add">Submit</button>
+            </form>
+
+            <form id="formProduct">
+              <div class="form-group">
+                <label>
+                  <h3>Add product</h3>
+                </label>
+                <input type="text" class="form-control" id="exampleInputText" placeholder="Product name">
+              </div>
+              <button type="submit" class="btn btn-primary" id="add">Submit</button>
+            </form>
+
+            <div id="all" class="all">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>name</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </main>
+        </div>
+
+
+        <!-- <div id="main-products" class="all-main">
+          <main role="main" id="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit product</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <input type="text" class="form-control" id="exampleInputText" placeholder="New product">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary save" data-dismiss="modal">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <form>
+              <div class="form-group">
+                <label for="exampleInputPassword1">
+                  <h3>Add product</h3>
+                </label>
+                <input type="text" class="form-control" id="exampleInputText" placeholder="Product">
+                <input type="text" class="form-control is-invalid" id="exampleInputText" placeholder="Price">
+                <input type="textarea" class="form-control" id="exampleInputText" placeholder="Description">
+              </div>
+              <button type="submit" class="btn btn-primary" id="add">Submit</button>
+            </form>
+            <div id="all" class="all">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>name</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </main>
+        </div> -->
+
+
       </div>
     </div>
   </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
     crossorigin="anonymous"></script>
   <script src="main.js"></script>
-
 </body>
-
 </html>
